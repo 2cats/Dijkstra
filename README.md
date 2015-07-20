@@ -6,7 +6,7 @@ Dijkstra算法是由荷兰计算机科学家艾兹赫尔·戴克斯特拉提出�
 开放最短路径优先算法是该算法在网络路由中的一个具体实现。
 ##算法原理
 **实例分析**：求图中V0到V5的最短路径
-![sample.jpg](.\sample.jpg)
+![sample.jpg](sample.jpg)
 
 **a.根据图来建立权值矩阵：**
 ```c
@@ -146,7 +146,7 @@ int main()
 
 运行结果：
 
-![output.JPG](.\output.JPG)
+![output.JPG](output.jpg)
 
 **Author:**	2cats
 May 12 2015 9:19 AM
