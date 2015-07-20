@@ -146,7 +146,7 @@ int main()
 
 运行结果：
 
-![output.JPG](output.jpg)
+![output.JPG](output.JPG)
 
 **Author:**	2cats
 May 12 2015 9:19 AM
