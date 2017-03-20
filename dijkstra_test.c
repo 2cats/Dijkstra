@@ -1,25 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//´ú±íÎŞÏŞ´ó
+//ä»£è¡¨æ— é™å¤§
 #define inf 	100000
-//µãµÄ¸öÊı
+//ç‚¹çš„ä¸ªæ•°
 #define V_SIZE	6
 
-//Êı×éÌî³ä
+//æ•°ç»„å¡«å……
 void array_fill(int * array, int len, int val) {
 	int i;
 	for (i = 0; i < len; i++) {
 		array[i] = val;
 	}
 }
-/*º¯Êı¹¦ÄÜ£º
- * 	dijkstraËã·¨ÇóÎŞÏòÍ¼×î¶Ì¾àÀë£¬²¢Êä³öÂ·¾¶
- *ÊäÈë²ÎÊı£º
- *	graph	È¨Öµ¾ØÕó
- *	n		¾ØÕó´óĞ¡,¼´µãµÄ¸öÊı
- *	start	Æğµã
- *	dist	½ÓÊÕµ½ËùÓĞµãµÄ×î¶Ì¾àÀë
+/*å‡½æ•°åŠŸèƒ½ï¼š
+ * 	dijkstraç®—æ³•æ±‚æ— å‘å›¾æœ€çŸ­è·ç¦»ï¼Œå¹¶è¾“å‡ºè·¯å¾„
+ *è¾“å…¥å‚æ•°ï¼š
+ *	graph	æƒå€¼çŸ©é˜µ
+ *	n		çŸ©é˜µå¤§å°,å³ç‚¹çš„ä¸ªæ•°
+ *	start	èµ·ç‚¹
+ *	dist	æ¥æ”¶åˆ°æ‰€æœ‰ç‚¹çš„æœ€çŸ­è·ç¦»
  * */
 void dijkstra(int graph[][V_SIZE],int n,int start,int dist[]) {
 	int* path=(int*)malloc(sizeof(int)*n);
@@ -37,14 +37,14 @@ void dijkstra(int graph[][V_SIZE],int n,int start,int dist[]) {
 	mark[start]=1;
 	while(1) {
 		min=inf;v=-1;
-		//ÕÒµ½×îĞ¡µÄ¾àÀë
+		//æ‰¾åˆ°æœ€å°çš„è·ç¦»
 		for(i=0;i<n;i++) {
 			if(!mark[i]) {
 				if(dist[i]<min) {min=dist[i];v=i;}
 			}
 		}
-		if(v==-1)break; //ÕÒ²»µ½¸ü¶ÌµÄÂ·¾¶ÁË
-		//¸üĞÂ×î¶ÌÂ·¾¶
+		if(v==-1)break; //æ‰¾ä¸åˆ°æ›´çŸ­çš„è·¯å¾„äº†
+		//æ›´æ–°æœ€çŸ­è·¯å¾„
 		mark[v]=1;
 		for(i=0;i<n;i++) {
 			if(!mark[i]&&
@@ -55,8 +55,8 @@ void dijkstra(int graph[][V_SIZE],int n,int start,int dist[]) {
 			}
 		}
 	}
-	//Êä³öÂ·¾¶
-	printf("Æğµã\tÖÕµã\t×î¶Ì¾àÀë\t¶ÔÓ¦Â·¾¶ \n");
+	//è¾“å‡ºè·¯å¾„
+	printf("èµ·ç‚¹\tç»ˆç‚¹\tæœ€çŸ­è·ç¦»\tå¯¹åº”è·¯å¾„ \n");
 	for(i=0;i<n;i++) {
 		if(i==start) continue;
 		array_fill(shortest,n, 0);
